@@ -18,18 +18,18 @@ A round-based 3D multiplayer first-person shooter built in Roblox Studio using L
 Key architectural components located across `ServerScriptService`, `ReplicatedStorage`, and `StarterPlayerScripts`:
 
 ### World Generation
-* **`Generator`** – Implementation of Kruskal's algorithm operating on a grid graph to generate maze walls, corridors, and structural variants dynamically.
-* **`Maze starter settings`** – Module class defining maze dimensions, cell density, and structural parameters passed into `Generator` before each match start.
+* [`/Scripts/Generator.luau`](/Scripts/Generator.luau) – Implementation of Kruskal's algorithm operating on a grid graph to generate maze walls, corridors, and structural variants dynamically.
+* [`/Scripts/MazeStarterSettings.luau`](/Scripts/MazeStarterSettings.luau) – Module class defining maze dimensions, cell density, and structural parameters passed into `Generator` before each match start.
 
 ### Match Lifecycle & State Management
-* **`Match Manager`** – Central server state controller. Manages match transitions, storm progression timings, active/remaining player counts, and win-condition checks.
-* **`Match Starting Area`** – Handles lobby queue detection zones, player registration, and overhead platform teleportation logic.
-* **`Match stats module`** – Data module tracking live in-game metrics for active combatants (kills, deaths, upgrades acquired, current session standings).
+* [`/Scripts/MatchManager.luau`](/Scripts/MatchManager.luau) – Central server state controller. Manages match transitions, storm progression timings, active/remaining player counts, and win-condition checks.
+* [`/Scripts/MatchStartingArea.luau`](/Scripts/MatchStartingArea.luau) – Handles lobby queue detection zones, player registration, and overhead platform teleportation logic.
+* [`/Scripts/MatchStatsModule.luau`](/Scripts/MatchStatsModule.luau) – Data module tracking live in-game metrics for active combatants (kills, deaths, upgrades acquired, current session standings).
 
 ### Equipment, Loot & UI Systems
-* **`Loot Script`** – Controls server-authoritative loot table distribution, weapon/upgrade spawning, and ground pickup interactions.
-* **`Tool UI`** – Client-side interface controller handling player hotbars, weapon state transitions, and real-time inventory updates.
-* **`Bad Server Script`** & **`Bad Client Script`** – Client/Server RPC pair implementing melee combat logic (baseball bat), handling local animation triggers, server-side hit validation, and damage application.
+* [`/Scripts/LootScript.luau`](/Scripts/LootScript.luau) – Controls server-authoritative loot table distribution, weapon/upgrade spawning, and ground pickup interactions.
+* [`/Scripts/ToolUI.luau`](/Scripts/ToolUI.luau) – Client-side interface controller handling player hotbars, weapon state transitions, and real-time inventory updates.
+* [`/Scripts/BatClientScript.luau`](/Scripts/BatClientScript.luau) & [`/Scripts/BatServerScript.luau`](/Scripts/BatServerScript.luau) – Client/Server RPC pair implementing melee combat logic (baseball bat), handling local animation triggers, server-side hit validation, and damage application.
 
 ---
 
